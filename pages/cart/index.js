@@ -64,7 +64,7 @@
   3 经过以上的验证 跳转到 支付页面！ 
  */
 
-import { getSetting, chooseAddress, openSetting, showModal ,showToast} from "../../utils/asyncWx.js";
+import { getSetting, chooseAddress, openSetting, showModal, showToast } from "../../utils/asyncWx.js";
 import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
   data: {
@@ -176,22 +176,22 @@ Page({
     }
   },
   // 点击 结算 
-  async handlePay(){
+  async handlePay() {
     // 1 判断收货地址
-    const {address,totalNum}=this.data;
-    if(!address.userName){
-      await showToast({title:"您还没有选择收货地址"});
+    const { address, totalNum } = this.data;
+    if (!address.userName) {
+      await showToast({ title: "您还没有选择收货地址" });
       return;
     }
     // 2 判断用户有没有选购商品
-    if(totalNum===0){
-      await showToast({title:"您还没有选购商品"});
-      return ;
+    if (totalNum === 0) {
+      await showToast({ title: "您还没有选购商品" });
+      return;
     }
     // 3 跳转到 支付页面
     wx.navigateTo({
       url: '/pages/pay/index'
     });
-      
+
   }
 })

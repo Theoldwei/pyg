@@ -103,9 +103,6 @@ Page({
       // true 防止用户 手抖 疯狂点击按钮 
       mask: true
     });
-
-
-
   },
   // 点击 商品收藏图标
   handleCollect() {
